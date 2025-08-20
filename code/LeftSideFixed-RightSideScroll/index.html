@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Left Side Fixed Right Side Sticky</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #000;
+            background: #fff;
+        }
+
+        .split-section {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        /* Left side */
+        .images {
+            flex: 1;
+            background-color: #E5FF8B;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .images img {
+            width: 90%;
+            border-radius: 15px;
+            padding: 30px 20px;
+            max-width: 500px;
+        }
+
+        .left-side-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .left-side-content h2 {
+            font-size: 3rem;
+            line-height: 1.2;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .scroll-cue {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            animation: fadeInUp 2s ease-in-out infinite alternate;
+        }
+
+        .scroll-text {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            color: #333;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(6px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0.4;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Right side */
+        .texts {
+            flex: 1;
+            background-color: #FFFBF5;
+            padding: 60px 40px;
+        }
+
+        .texts h2 {
+            font-size: 2rem;
+            line-height: 1.4;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .texts p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        /* Accordion */
+        .accordion {
+            border: 1px solid #ddd;
+            background: #E5FF8B;
+            margin-bottom: 40px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .accordion-item+.accordion-item {
+            border-top: 1px solid #ddd;
+        }
+
+        .accordion-header {
+            background: none;
+            border: none;
+            padding: 20px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .accordion-icon {
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 0 20px 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .accordion-item.active .accordion-content {
+            display: block;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 40px 0;
+        }
+
+        /* Program list */
+        .program-title {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .program-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .program-list li {
+            padding: 8px 0;
+            font-size: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Payment */
+        .payment {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .payment h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .payment p {
+            font-size: 1rem;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .pricing-section {
+            text-align: center;
+        }
+
+        .waitlist {
+            background-color: #d9d9d9;
+            padding: 10px 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .price-box {
+            background-color: #e6ffa3;
+            padding: 20px;
+            margin: 10px auto;
+            max-width: 400px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        /* Registration */
+        .registration-section {
+            text-align: center;
+        }
+
+        .registration-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .registration-section p {
+            font-size: 1rem;
+            margin: 10px auto 20px;
+            max-width: 600px;
+        }
+
+        .start-box {
+            background-color: #e6ffa3;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        .start-box span {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .start-box .start-date {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .start-box .earlybird {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .register-btn {
+            position: relative;
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #000;
+            border: 2px solid #000;
+            background-color: transparent;
+            overflow: hidden;
+            border-radius: 4px;
+            transition: color 0.3s ease;
+            z-index: 1;
+        }
+
+        .register-btn::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #000;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            z-index: -1;
+        }
+
+        .register-btn:hover::before {
+            transform: translateY(0);
+        }
+
+        .register-btn:hover {
+            color: #fff;
+        }
+
+
+        /* Membership */
+        .membership-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .split-section {
+                flex-direction: column;
+            }
+
+            .images {
+                position: relative;
+                height: auto;
+            }
+
+            .images img {
+                padding: 20px;
+            }
+
+            .left-side-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .texts {
+                padding: 40px 20px;
+            }
+
+            .texts h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .left-side-content h2 {
+                font-size: 2rem;
+            }
+
+            .accordion-header {
+                font-size: 1rem;
+            }
+
+            .accordion-icon {
+                font-size: 1.5rem;
+            }
+
+            .texts p,
+            .program-list li,
+            .payment p,
+            .registration-section p {
+                font-size: 0.95rem;
+            }
+
+            .price-box {
+                font-size: 1rem;
+            }
+
+            .start-box .start-date {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="split-section">
+        <!-- left -->
+        <div class="images">
+            <img src="https://images.squarespace-cdn.com/content/v1/5c0949fdaa49a14676aa1be9/e84994b3-65bd-40b9-a2d2-f8d6fa802e30/FALL-COHORT?format=2500w"
+                alt="">
+            <div class="left-side-content">
+                <h2>Fall 2025 Cohort <br>Registration Details</h2>
+                <div class="scroll-cue">
+                    <span class="scroll-text">Scroll to reveal registration info</span>
+                    <span class="arrow">&#8595;</span>
+                </div>
+            </div>
+
+        </div>
+        <!-- Right -->
+        <div class="texts">
+            <h2 class="text-block">TRAUMA OF MONEY™ <br> CERTIFICATION</h2>
+            <p class="text-block">
+                This program equips individual practitioners with the skills to effectively apply the Trauma of Money™
+                methodology with their clients over a 18-week cohort offered in Fall and Spring. Successful completion
+                certifies participants, granting access to licensed materials for individual practice. Ideal
+                participants include mental health professionals, coaches, finance experts, social impact entrepreneurs,
+                economic justice or HR leaders, family lawyers, and entrepreneurship or finance curriculum development
+                educators.
+            </p> <br>
+            <!-- accordion -->
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Can I pursue this professional certification for my personal financial recovery journey even if
+                        I don't intend to utilize it professionally?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, you are welcome to join for personal development. Many participants have found deep
+                            personal healing through this certification process.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3 class="program-title">This Program Includes</h3>
+            <ul class="program-list">
+                <li>18 live Zoom classes</li>
+                <li>Access to recorded materials</li>
+                <li>Community support group</li>
+                <li>Certification upon completion</li>
+            </ul>
+            <hr>
+            <!-- PAYMENT OPTIONS -->
+            <div class="payment">
+                <h2>PAYMENT OPTIONS</h2>
+                <p>In the interest of making TOM™ sustainable and accessible to as many as possible and understanding
+                    that everyone has different capabilities, we have made two payment plan options.</p>
+                <p>All prices are in USD.</p>
+            </div>
+
+            <div class="pricing-section">
+                <div class="waitlist">SIGN UP FOR THE FALL WAITLIST!</div>
+
+                <div class="price-box">$2,150 Up-Front Payment</div>
+                <div class="price-box">$362/Mo For 6 Months</div>
+                <div class="price-box">$185/Mo For 12 Months</div>
+            </div>
+            <hr>
+
+            <div class="registration-section">
+                <h2>REGISTRATION</h2>
+                <p>
+                    The program runs for 18 weeks. All classes are recorded and sent out within 48 hrs
+                    for those students that can’t attend live.
+                </p>
+
+                <div class="start-box">
+                    <span>FALL 2025 COHORT</span>
+                    <div class="start-date">Starts Sept 24, 2025</div>
+                    <div class="earlybird">Register w/ EARLYBIRD until Aug 22 for 10% off</div>
+                    <a class="register-btn"
+                        href="https://the-trauma-of-money.teachable.com/p/professional-sales-page-cohort-13">REGISTER
+                        HERE</a>
+                      
+                </div>
+            </div>
+            <hr>
+            <h4 class="membership-title">WHAT IS THE ONGOING MEMBERSHIP COST & ANNUAL LICENSE RENEWAL FEE?</h4>
+            <p>In order to have on-going access to the alumni community and be listed on the directory, there is an
+                annual membership fee of $200 but for the 2025 cohorts, this cost is $0!</p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const headers = document.querySelectorAll('.accordion-header');
+            headers.forEach(header => {
+                header.addEventListener('click', function () {
+                    const item = this.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

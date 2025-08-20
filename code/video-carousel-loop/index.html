@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Video Slider</title>
+    <style>
+        #page {
+            overflow-x: hidden;
+        }
+
+        .gallery-grid-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-grid {
+            display: flex;
+            width: max-content;
+            animation: marquee 60s linear infinite;
+            position: relative;
+        }
+
+        .gallery-grid-item {
+            width: 210px;
+            height: 380px;
+            margin-right: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #000;
+            flex-shrink: 0;
+        }
+
+        .gallery-grid-item iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .gallery-grid-wrapper:hover .gallery-grid {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body id="page">
+    <div class="gallery-grid-wrapper">
+        <div class="gallery-grid">
+
+            <!-- Replace video ID in each iframe -->
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/hr59hwCWlLg?autoplay=1&mute=1&loop=1&playlist=hr59hwCWlLg"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/eDb4XpGWhAg?autoplay=1&mute=1&loop=1&playlist=eDb4XpGWhAg"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/zCd_GRQEb6E?autoplay=1&mute=1&loop=1&playlist=zCd_GRQEb6E"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/F3md-wEP1b4?autoplay=1&mute=1&loop=1&playlist=F3md-wEP1b4"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/w4eaO1axT5Y?autoplay=1&mute=1&loop=1&playlist=w4eaO1axT5Y"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/10FXg07pPcc?autoplay=1&mute=1&loop=1&playlist=10FXg07pPcc"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/8PYmfFq15Og?autoplay=1&mute=1&loop=1&playlist=8PYmfFq15Og"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/RJRqZltwEF8?autoplay=1&mute=1&loop=1&playlist=RJRqZltwEF8"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/uoZPIH0v-T8?autoplay=1&mute=1&loop=1&playlist=uoZPIH0v-T8"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/99CWYalJTXU?autoplay=1&mute=1&loop=1&playlist=99CWYalJTXU"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/jwPCKQArnUU?autoplay=1&mute=1&loop=1&playlist=jwPCKQArnUU"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/QI1uqgxjIRY?autoplay=1&mute=1&loop=1&playlist=QI1uqgxjIRY"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/qoXZZr-gjsQ?autoplay=1&mute=1&loop=1&playlist=qoXZZr-gjsQ"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="gallery-grid-item">
+                <iframe src="https://www.youtube.com/embed/ApE0x_pTcPs?autoplay=1&mute=1&loop=1&playlist=ApE0x_pTcPs"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

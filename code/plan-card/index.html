@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Membership Plans</title>
+    <style>
+        body {
+            color: #ffffff;
+        }
+
+        .cta-second {
+            margin-top: 70px !important;
+        }
+
+        .cta-btn:hover {
+            background: #9e1f20;
+        }
+
+        /* MEMBERSHIP PLANS GRID */
+        .membership-plans {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 60px 20px;
+        }
+
+        .plan-card {
+            background: #1F2937;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            width: calc((100% / 3) - 20px);
+            min-width: 280px;
+            flex: 0 0 auto;
+
+            /* FLEXBOX TO ALIGN BUTTON */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .plan-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .plan-card h3 {
+            font-size: 1.5rem !important;
+            margin: 15px;
+        }
+
+        .desc,
+        .desc2 {
+            font-size: 1rem !important;
+            margin: 0 15px 15px;
+            padding: 10px 60px 10px 0;
+        }
+
+        @media (max-width: 600px) {
+
+            .desc,
+            .desc2 {
+                padding-right: 10px;
+            }
+        }
+
+        .plan-card ul {
+            list-style: none;
+            padding: 35px 15px 15px;
+        }
+
+        .plan-card ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .plan-card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #b72525;
+            font-weight: bold;
+        }
+
+        .notice-cancellation {
+            padding: 15px 15px 0 15px;
+            margin-top: -20px;
+            font-weight: 800;
+        }
+
+        .cta-btn-plan {
+            display: block;
+            margin: 15px;
+            padding: 12px;
+            background: #b72525;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+
+            margin-top: auto;
+            /* PUSH BUTTON TO BOTTOM */
+        }
+
+        .cta-btn-plan:hover {
+            background: #9e1f20;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: -10px;
+            background: #b72525;
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.9rem !important;
+            font-weight: bold;
+            border-radius: 8px;
+            transform: rotate(-15deg);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 960px) {
+            .plan-card {
+                width: calc((100% / 2) - 20px);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .plan-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- MEMBERSHIP PLANS GRID -->
+    <section id="plans" class="membership-plans">
+
+        <!-- Free Trial Card -->
+        <div class="plan-card">
+            <img src="https://i.ibb.co.com/chtF4G4d/imgi-9-IMG-8450.webp" alt="1-Week Free Trial">
+            <h3>1-Week Free Trial</h3>
+            <p class="desc">
+                Experience everything our gym has to offer with a <strong>FREE 1-week trial</strong>. No commitment,
+                just results.
+            </p>
+            <a href="#" class="cta-btn-plan">START FREE TRIAL</a>
+        </div>
+
+        <!-- Existing Cards -->
+        <div class="plan-card">
+            <img src="https://i.postimg.cc/XYSmXR8X/IMG-8530.webp" alt="24/7 Monthly Access">
+            <h3>24/7 Monthly Access</h3>
+            <ul>
+                <li>Month to month access to our facility</li>
+                <li>3 month minimum </li>
+                <li>No fees or contracts</li>
+            </ul>
+            <p class="notice-cancellation">*Requires 30-day notice of cancellation.*</p>
+            <a href="#" target="_blank" class="cta-btn-plan">GET YOUR MEMBERSHIP</a>
+        </div>
+
+        <div class="plan-card">
+            <img src="https://i.ibb.co.com/bjz40Zv9/imgi-83-temp-Image-F7p-DHT.webp" alt="Day Pass">
+            <h3>Day Pass</h3>
+            <p class="desc">
+                Want to pay us a visit? Get a day pass and stop by! Visits require an appointment prior to entry and
+                must be scheduled during normal business hours.
+            </p>
+            <a href="#" class="cta-btn-plan" target="_blank">DROP IN DAY PASS</a>
+        </div>
+
+        <div class="plan-card">
+            <img src="https://i.postimg.cc/hvQZtsQ9/imageye-imgi-10-temp-Imageo6ffai.jpg" alt="Weekend Warrior">
+            <h3>Weekend Warrior</h3>
+            <p class="desc2">Access to training every Saturday and Sunday per month 24/7 access.</p>
+            <h4 class="desc2"> Limited to weekends only. </h4>
+            <p class="desc2">Payment renewal every 4-weeks.</p>
+            <p class="notice-cancellation">*Requires 30-day notice of cancellation.*</p>
+            <a href="#" class="cta-btn-plan" target="_blank">WEEKEND WARRIOR</a>
+        </div>
+
+        <div class="plan-card">
+            <img src="https://i.postimg.cc/4nCL7cpj/imageye-imgi-11-IMG-8533.jpg" alt="6 Month Access">
+            <h3>6 Month – Pay in Full</h3>
+            <p class="desc">
+                Pay for half a year of membership upfront and receive a discounted rate compared to the monthly rates.
+            </p>
+            <a href="#" target="_blank" class="cta-btn-plan">6-MONTH PIF</a>
+        </div>
+
+        <div class="plan-card">
+            <img src="https://i.ibb.co.com/9Hhh9mBQ/imgi-73-IMG-8454.webp" alt="1 Year Access">
+            <h3>1 Year – Pay in Full</h3>
+            <P class="desc">
+                Pay for a year of membership upfront and get a year for the cost of 10 months (2 month savings).
+            </P>
+            <a href="#" target="_blank" class="cta-btn-plan">1-YEAR PIF</a>
+            <span class="badge">Best Value</span>
+        </div>
+
+    </section>
+</body>
+
+</html>

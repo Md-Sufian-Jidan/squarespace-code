@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Therapy Section</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Georgia', serif;
+    }
+
+    .therapy-section {
+      background-color: #b57a50;
+      color: #fff3ec;
+      padding: 60px 20px;
+    }
+
+    .therapy-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #ECBFB9;
+      margin-bottom: 50px;
+    }
+
+    .therapy-content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    /* Card */
+    .therapy-card {
+      background: #fef9f4;
+      color: #5a422b;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 40px;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    .therapy-icon {
+      width: 45%;
+      height: auto;
+      margin-right: 20px;
+    }
+
+    .therapy-text h3 {
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      color: #6D6236;
+    }
+
+    .therapy-text p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #6D6236;
+    }
+
+    .learn-more-btn {
+      display: inline-block;
+      padding: 8px 18px;
+      background: #e1a65b;
+      color: #6D6236;
+      font-weight: bold;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .learn-more-btn:hover {
+      background: #ECBFB9;
+    }
+
+    /* Stepper */
+    .therapy-stepper {
+      position: relative;
+      padding-left: 20px;
+      border-left: 2px solid #f5c8b0;
+    }
+
+    .therapy-stepper ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .therapy-stepper li {
+      margin: 50px 0;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #fff;
+      position: relative;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .therapy-stepper li.active {
+      color: #ECBFB9;
+    }
+
+    .therapy-stepper li.active::before {
+      content: "";
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      background-color: #f5c8b0;
+      border-radius: 50%;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .therapy-content {
+        gap: 30px;
+      }
+
+      .therapy-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .therapy-icon {
+        width: 70%;
+        margin: 0 0 20px 0;
+      }
+
+      .therapy-stepper {
+        border-left: none;
+        padding-left: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      .therapy-stepper ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .therapy-stepper li {
+        margin: 20px 0;
+      }
+
+      .therapy-stepper li.active::before {
+        left: 50%;
+        top: -10px;
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .therapy-title {
+        font-size: 1.5rem;
+      }
+
+      .therapy-card {
+        padding: 20px;
+      }
+
+      .therapy-text h3 {
+        font-size: 0.95rem;
+      }
+
+      .therapy-text p {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="therapy-section">
+    <h2 class="therapy-title">trust your soul, find peace amidst chaos</h2>
+
+    <div class="therapy-content">
+      <!-- Left Dynamic Content -->
+      <div class="therapy-card">
+        <img id="therapy-img" src="https://i.ibb.co.com/7tK7Np8T/Therapy-Servicecs-13.webp" alt="Therapy Icon"
+          class="therapy-icon" />
+        <div class="therapy-text">
+          <h3 id="therapy-heading">ANXIETY THERAPY</h3>
+          <p id="therapy-description">
+            Anxiety can weave itself into every moment of your day. From the first light of dawn, shadowing your
+            thoughts with worries about the day ahead, to the quiet of night where reflections on the day’s words and
+            actions linger. Together, we can unravel the dynamics that allow anxiety to take hold and reclaim your days
+            with peace and clarity.
+          </p>
+          <a href="#" class="learn-more-btn">learn more</a>
+        </div>
+      </div>
+
+      <!-- Stepper Navigation -->
+      <div class="therapy-stepper">
+        <ul>
+          <li data-img="https://i.ibb.co.com/7tK7Np8T/Therapy-Servicecs-13.webp" data-heading="ANXIETY THERAPY"
+            data-description="Anxiety can weave itself into every moment of your day. From the first light of dawn, shadowing your thoughts with worries about the day ahead, to the quiet of night where reflections on the day’s words and actions linger. Together, we can unravel the dynamics that allow anxiety to take hold and reclaim your days with peace and clarity."
+            class="active">ANXIETY THERAPY</li>
+
+          <li data-img="https://i.ibb.co.com/VYt9KPD1/Therapy-Servicecs-11.webp"
+            data-heading="THERAPY FOR PERFECTIONISM"
+            data-description="You deserve to feel content with who you are in this moment without endlessly striving for more. We’ll help you work to embrace the feeling of being enough — imperfections and all. We’ll discover the underlying causes that have prevented you from accepting your true self and savoring the joy of life as it unfolds now. ">
+            THERAPY FOR PERFECTIONISM</li>
+
+          <li data-img="https://i.ibb.co.com/RG1vbkV5/Therapy-Servicecs-10.webp" data-heading="CODEPENDENCY THERAPY"
+            data-description="Relationships are intricate and often messy, especially when haunted by fears of abandonment and rejection. We’ll empower you to heal from past wounds to cultivate the strength to set boundaries and voice your needs. We’ll guide you to nurture fulfilling connections that don’t depend on making yourself small for the other person. ">
+            CODEPENDENCY THERAPY</li>
+
+          <li data-img="https://i.ibb.co.com/MyXZnQCq/Therapy-Servicecs-12.webp" data-heading="SELF-ESTEEM THERAPY"
+            data-description="A persistent voice lingers in the shadows of your mind, never letting you forget your missteps or shortcomings. We’ll work to heal this inner critic so you can finally breathe light again. We long for you to find inner peace and liberation from relentless self-criticism and judgment.">
+            SELF-ESTEEM THERAPY</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const steps = document.querySelectorAll(".therapy-stepper li");
+    const img = document.getElementById("therapy-img");
+    const heading = document.getElementById("therapy-heading");
+    const description = document.getElementById("therapy-description");
+
+    steps.forEach(step => {
+      step.addEventListener("mouseenter", () => {
+        steps.forEach(s => s.classList.remove("active"));
+        step.classList.add("active");
+        img.src = step.getAttribute("data-img");
+        heading.textContent = step.getAttribute("data-heading");
+        description.textContent = step.getAttribute("data-description");
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+#page .page-section {
+    position: sticky !important;
+    top: 0px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8) !important
+}
+
+html {
+    scroll-behavior: smooth
+}

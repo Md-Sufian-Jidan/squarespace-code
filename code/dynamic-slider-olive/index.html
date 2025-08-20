@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olive Dynamic Slider</title>
+  <style>
+    .instead-experience-section {
+      background-color: #c7b165;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Georgia', serif;
+      color: #fff9f0;
+    }
+
+    .boxes-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .dynamic-box {
+      border: 2px solid #f7d9c6;
+      width: 420px;
+      min-height: 350px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: transparent;
+      box-sizing: border-box;
+      flex: 1 1 320px;
+    }
+
+    .dynamic-box h3 {
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      font-weight: bold;
+      color: #6D6236;
+      padding: 20px;
+      border-bottom: 2px solid #f7d9c6;
+    }
+
+    .dynamic-box p {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      transition: opacity 0.5s ease-in-out;
+      padding: 40px;
+      line-height: 1.3;
+    }
+
+    .arrow {
+      font-size: 2.5rem;
+      color: #5b451d;
+      flex-shrink: 0;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .dynamic-box {
+        width: 45%;
+        min-height: 300px;
+      }
+
+      .dynamic-box p {
+        font-size: 1.5rem;
+        padding: 30px;
+      }
+
+      .arrow {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .boxes-container {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .dynamic-box {
+        width: 100%;
+        max-width: 420px;
+        min-height: auto;
+      }
+
+      .dynamic-box p {
+        font-size: 1.3rem;
+        padding: 25px;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .dynamic-box h3 {
+        font-size: 0.8rem;
+        padding: 15px;
+      }
+
+      .dynamic-box p {
+        font-size: 1.1rem;
+        padding: 20px;
+      }
+
+      .arrow {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="instead-experience-section">
+    <div class="boxes-container">
+      <!-- Instead Of Box -->
+      <div class="dynamic-box">
+        <h3>INSTEAD OF...</h3>
+        <p id="instead-text">feeling unseen, misunderstood, unworthy or unwanted</p>
+      </div>
+
+      <!-- Arrow -->
+      <div class="arrow">→</div>
+
+      <!-- You Could Experience Box -->
+      <div class="dynamic-box">
+        <h3>YOU COULD EXPERIENCE</h3>
+        <p id="experience-text">the ability to trust your inner voice, strength and wisdom to push doubts out</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const insteadTexts = [
+      "feeling unseen, misunderstood, unworthy or unwanted",
+      "constantly criticized or judged",
+      "trapped in self-doubt and fear",
+      "overwhelmed by anxiety and stress"
+    ];
+
+    const experienceTexts = [
+      "the ability to trust your inner voice, strength and wisdom to push doubts out",
+      "a newfound sense of self-acceptance and self-love",
+      "the courage to embrace imperfections and live authentically",
+      "emotional clarity and inner peace in your daily life"
+    ];
+
+    let index = 0;
+    const insteadEl = document.getElementById("instead-text");
+    const experienceEl = document.getElementById("experience-text");
+
+    function updateTexts() {
+      insteadEl.style.opacity = 0;
+      experienceEl.style.opacity = 0;
+
+      setTimeout(() => {
+        insteadEl.textContent = insteadTexts[index];
+        experienceEl.textContent = experienceTexts[index];
+
+        insteadEl.style.opacity = 1;
+        experienceEl.style.opacity = 1;
+
+        index = (index + 1) % insteadTexts.length;
+      }, 500);
+    }
+
+    setInterval(updateTexts, 4000); // Change every 4 seconds
+  </script>
+</body>
+</html>

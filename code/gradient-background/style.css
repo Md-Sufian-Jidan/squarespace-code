@@ -1,0 +1,11 @@
+/* Apply gradient to specific section */
+section[data-section-id="68957425910b837cf368ba6a"] {
+  background: linear-gradient(to bottom, #D4FA41, #FFFAF5) !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* hide section border */
+section[data-section-id="68957425910b837cf368ba6a"] .section-border {
+  opacity: 0 !important;
+}

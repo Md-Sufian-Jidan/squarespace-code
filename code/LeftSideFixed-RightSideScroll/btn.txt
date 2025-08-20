@@ -1,0 +1,123 @@
+.btn-block {
+    background-color: #C9B164;
+    color: white;
+    padding: 20px;
+    border: none;
+}
+
+.btn-block:hover {
+    background-color: #d4bd6f;
+}
+
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fffaf4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #000;
+  }
+
+  .pricing-section {
+    padding: 40px 20px;
+  }
+
+  .waitlist {
+    background-color: #d9d9d9;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .price-box {
+    background-color: #e6ffa3;
+    padding: 20px;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 500px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+
+  .registration-section {
+    padding: 40px 20px;
+    border-top: 1px solid #ccc;
+  }
+
+  .registration-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .registration-section p {
+    font-size: 16px;
+    margin: 10px auto 30px;
+    max-width: 600px;
+  }
+
+  .start-box {
+    background-color: #e6ffa3;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .start-box span {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .start-box .start-date {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .start-box .earlybird {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .start-box .register-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+</style>
+
+<div class="pricing-section">
+  <div class="waitlist">SIGN UP FOR THE FALL WAITLIST!</div>
+
+  <div class="price-box">$2,150 Up-Front Payment</div>
+  <div class="price-box">$362/Mo For 6 Months</div>
+  <div class="price-box">$185/Mo For 12 Months</div>
+</div>
+
+<div class="registration-section">
+  <h2>REGISTRATION</h2>
+  <p>
+    The program runs for 18 weeks. All classes are recorded and sent out within 48 hrs
+    for those students that can’t attend live.
+  </p>
+
+  <div class="start-box">
+    <span>FALL 2025 COHORT</span>
+    <div class="start-date">Starts Sept 24, 2025</div>
+    <div class="earlybird">Register w/ EARLYBIRD until Aug 22 for 10% off</div>
+    <a class="register-btn" href="#">REGISTER HERE</a>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+/* // FLIP OVER SOCIAL ICONS - SOCIAL BLOCK - GHOSTPLUGINS.COM // */
+
+.socialaccountlinks-v2-block .sqs-svg-icon--wrapper,
+.social-account-links-v2-block .sqs-svg-icon--wrapper {
+    transform: scaleX(1) !important;
+    transition: all ease-in-out .5s !important;
+}
+
+.socialaccountlinks-v2-block .sqs-svg-icon--wrapper:hover {
+    transform: scaleX(-1) !important;
+    transition: all ease-in-out .5s !important;
+}

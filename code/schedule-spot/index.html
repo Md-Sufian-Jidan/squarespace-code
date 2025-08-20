@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Week's Schedule</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .container {
+            /* max-width: 1200px; */
+            margin: 0 auto;
+            background: rgba(20, 30, 50, 0.8);
+            border-radius: 10px;
+            /* padding: 40px; */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .calendar-icon {
+            width: 40px;
+            height: 40px;
+            background: #e74c3c;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .day-card {
+            background: rgba(30, 40, 60, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #e74c3c;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .session {
+            background: rgba(40, 50, 70, 0.8);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .session:hover {
+            transform: translateX(5px);
+            border-left-color: #3498db;
+        }
+
+        .session.full {
+            border-left-color: #e74c3c;
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        .session-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .session-time {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        .spots-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .spots-available {
+            background: #27ae60;
+            color: white;
+        }
+
+        .spots-full {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .session-name {
+            color: #bdc3c7;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .footer-text {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .reserve-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+        }
+
+        .reserve-btn:hover {
+            background: linear-gradient(135deg, #c0392b, #a93226);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        .reserve-btn:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .schedule-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .day-card {
+                padding: 20px;
+            }
+        }
+
+        .session::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .session:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <div class="calendar-icon">📅</div>
+                This Week's Schedule
+            </h1>
+        </div>
+
+        <div class="schedule-grid">
+            <div class="day-card">
+                <div class="day-title">Monday</div>
+                
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">6:00 AM</div>
+                        <span class="spots-badge spots-available">3 spots left</span>
+                    </div>
+                    <div class="session-name">Strength Foundations</div>
+                </div>
+
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">7:00 AM</div>
+                        <span class="spots-badge spots-available">2 spots left</span>
+                    </div>
+                    <div class="session-name">HIIT & Strength</div>
+                </div>
+
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">12:00 PM</div>
+                        <span class="spots-badge spots-available">3 spots left</span>
+                    </div>
+                    <div class="session-name">Lunch Hour Power</div>
+                </div>
+
+                <div class="session full">
+                    <div class="session-header">
+                        <div class="session-time">6:00 PM</div>
+                        <span class="spots-badge spots-full">Full</span>
+                    </div>
+                    <div class="session-name">Evening Strength</div>
+                </div>
+
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">7:00 PM</div>
+                        <span class="spots-badge spots-available">4 spots left</span>
+                    </div>
+                    <div class="session-name">Beginner Friendly</div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-title">Tuesday</div>
+                
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">6:00 AM</div>
+                        <span class="spots-badge spots-available">1 spot left</span>
+                    </div>
+                    <div class="session-name">Olympic Lifting</div>
+                </div>
+
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">7:00 AM</div>
+                        <span class="spots-badge spots-available">3 spots left</span>
+                    </div>
+                    <div class="session-name">Functional Fitness</div>
+                </div>
+
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">12:00 PM</div>
+                        <span class="spots-badge spots-available">6 spots left</span>
+                    </div>
+                    <div class="session-name">Core & Conditioning</div>
+                </div>
+
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">6:00 PM</div>
+                        <span class="spots-badge spots-available">2 spots left</span>
+                    </div>
+                    <div class="session-name">Strength & Mobility</div>
+                </div>
+
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">7:00 PM</div>
+                        <span class="spots-badge spots-available">4 spots left</span>
+                    </div>
+                    <div class="session-name">Powerlifting Focus</div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-title">Wednesday</div>
+                
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">6:00 AM</div>
+                        <span class="spots-badge spots-available">2 spots left</span>
+                    </div>
+                    <div class="session-name">Strength Foundations</div>
+                </div>
+
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">7:00 AM</div>
+                        <span class="spots-badge spots-available">1 spot left</span>
+                    </div>
+                    <div class="session-name">HIIT & Strength</div>
+                </div>
+
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">12:00 PM</div>
+                        <span class="spots-badge spots-available">4 spots left</span>
+                    </div>
+                    <div class="session-name">Lunch Hour Power</div>
+                </div>
+
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">6:00 PM</div>
+                        <span class="spots-badge spots-available">3 spots left</span>
+                    </div>
+                    <div class="session-name">Evening Strength</div>
+                </div>
+
+                <div class="session">
+                    <div class="session-header">
+                        <div class="session-time">7:00 PM</div>
+                        <span class="spots-badge spots-available">5 spots left</span>
+                    </div>
+                    <div class="session-name">Beginner Friendly</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="footer-text">Schedule subject to change. Members get priority booking 24 hours in advance.</p>
+            <button class="reserve-btn" onclick="handleReservation()">Reserve Your Spot</button>
+        </div>
+    </div>
+
+    <script>
+        function handleReservation() {
+            // Simple alert for demonstration
+            alert('Reservation system would open here! 🏋‍♂');
+        }
+
+        // Add some interactive effects
+        document.querySelectorAll('.session').forEach(session => {
+            session.addEventListener('click', function() {
+                if (!this.classList.contains('full')) {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                }
+            });
+        });
+
+        // Add loading animation on page load
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.day-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

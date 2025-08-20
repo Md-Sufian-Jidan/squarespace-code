@@ -1,0 +1,166 @@
+body {
+   background-color: #e8e6e6 !important;
+}
+
+/* header background */
+#collection-6881b02f113ce25f7094f765 header {
+  background-color: #e8e6e6 !important;
+}
+
+/* nav link size */
+#collection-6881b02f113ce25f7094f765 a {
+  font-size: 22px !important;
+}
+
+/* ---------- Card custom design for all IDs ---------- */
+#block-yui_3_17_2_1_1753330315472_4348 .image-block-outer-wrapper,
+#block-8617ff4d8e45d9ae10b6 .image-block-outer-wrapper,
+#block-yui_3_17_2_1_1753330315472_6627 .image-block-outer-wrapper,
+#block-yui_3_17_2_1_1753330315472_7464 .image-block-outer-wrapper,
+#block-yui_3_17_2_1_1753337116776_1609 .image-block-outer-wrapper,
+#block-13d10ca3e46e17c45ae0 .image-block-outer-wrapper,
+#block-yui_3_17_2_1_1753337116776_2199 .image-block-outer-wrapper,
+#block-yui_3_17_2_1_1753337116776_2699 .image-block-outer-wrapper,
+#block-256d956bb355119b778a .image-block-outer-wrapper,
+#block-yui_3_17_2_1_1753337116776_4662 .image-block-outer-wrapper,
+#block-yui_3_17_2_1_1753337116776_3660 .image-block-outer-wrapper,
+#block-yui_3_17_2_1_1753337116776_4183 .image-block-outer-wrapper,
+#block-9d79d5f9ff65cec42fca .image-block-outer-wrapper,
+#block-1fa29f908b889b660f5f .image-block-outer-wrapper,
+#block-7d277611212d7e6a3e26 .image-block-outer-wrapper,
+#block-3cd3118dc53e37f58f4e .image-block-outer-wrapper,
+#block-e695037aca2feeb696e7 .image-block-outer-wrapper,
+#block-76a4f53e5f6b6a9cfca2 .image-block-outer-wrapper,
+#block-2edc0c8d71a7e18509d1 .image-block-outer-wrapper,
+#block-d0e79f92a730596bebac .image-block-outer-wrapper,
+#block-586a3f87a166beae6953 .image-block-outer-wrapper,
+#block-yui_3_17_2_1_1753337116776_5730 .image-block-outer-wrapper,
+#block-yui_3_17_2_1_1753337116776_6732 .image-block-outer-wrapper,
+#block-c4153065f2330bd63a86 .image-block-outer-wrapper,
+#block-f7e67e093f408799a1f5 .image-block-outer-wrapper,
+#block-5de5f1df58386adc5b72 .image-block-outer-wrapper,
+#block-748b0bf0fd6ee517d39e .image-block-outer-wrapper,
+#block-87e2334291710352fa7f .image-block-outer-wrapper,
+#block-2ddea5cbe27e7716a594 .image-block-outer-wrapper,
+#block-yui_3_17_2_1_1753346037179_1804 .image-block-outer-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---------- Overlay Content per ID ---------- */
+#block-yui_3_17_2_1_1753330315472_4348 .image-block-outer-wrapper::after { content: "loom"; }
+#block-8617ff4d8e45d9ae10b6 .image-block-outer-wrapper::after { content: "Airo Brands"; }
+#block-yui_3_17_2_1_1753330315472_6627 .image-block-outer-wrapper::after { content: "Australian Youth Orchestra"; }
+#block-yui_3_17_2_1_1753330315472_7464 .image-block-outer-wrapper::after { content: "SK-II"; }
+#block-yui_3_17_2_1_1753337116776_1609 .image-block-outer-wrapper::after { content: "Maxon Cinema 4D"; }
+#block-13d10ca3e46e17c45ae0 .image-block-outer-wrapper::after { content: "Noema Mag"; }
+#block-yui_3_17_2_1_1753337116776_2199 .image-block-outer-wrapper::after { content: "Addidas - City Artist Life"; }
+#block-yui_3_17_2_1_1753337116776_2699 .image-block-outer-wrapper::after { content: "Moving Colors"; }
+#block-256d956bb355119b778a .image-block-outer-wrapper::after { content: "Adobe Create Photo Booth"; }
+#block-yui_3_17_2_1_1753337116776_4662 .image-block-outer-wrapper::after { content: "M&M's"; }
+#block-yui_3_17_2_1_1753337116776_3660 .image-block-outer-wrapper::after { content: "Scribbles & Squiggers"; }
+#block-yui_3_17_2_1_1753337116776_4183 .image-block-outer-wrapper::after { content: "Nickelodeon Slime"; }
+#block-9d79d5f9ff65cec42fca .image-block-outer-wrapper::after { content: "New Balance"; }
+#block-1fa29f908b889b660f5f .image-block-outer-wrapper::after { content: "Refinery29 | 29 Rooms"; }
+#block-7d277611212d7e6a3e26 .image-block-outer-wrapper::after { content: "M.O.L.D"; }
+#block-3cd3118dc53e37f58f4e .image-block-outer-wrapper::after { content: "Addidas Originals"; }
+#block-e695037aca2feeb696e7 .image-block-outer-wrapper::after { content: "Mickey Mouse 90th"; }
+#block-76a4f53e5f6b6a9cfca2 .image-block-outer-wrapper::after { content: "Samsung QLED"; }
+#block-2edc0c8d71a7e18509d1 .image-block-outer-wrapper::after { content: "Haus Labs x Lady Gaga"; }
+#block-d0e79f92a730596bebac .image-block-outer-wrapper::after { content: "Perrier"; }
+#block-586a3f87a166beae6953 .image-block-outer-wrapper::after { content: "Citrix"; }
+#block-yui_3_17_2_1_1753337116776_5730 .image-block-outer-wrapper::after { content: "Magnum"; }
+#block-yui_3_17_2_1_1753337116776_6732 .image-block-outer-wrapper::after { content: "WIRED"; }
+#block-c4153065f2330bd63a86 .image-block-outer-wrapper::after { content: "TRUIST"; }
+#block-f7e67e093f408799a1f5 .image-block-outer-wrapper::after { content: "Excelsior MMXXI"; }
+#block-5de5f1df58386adc5b72 .image-block-outer-wrapper::after { content: "Google"; }
+#block-748b0bf0fd6ee517d39e .image-block-outer-wrapper::after { content: "OFFF Sevilla Main Titles"; }
+#block-87e2334291710352fa7f .image-block-outer-wrapper::after { content: "Adobe Aero"; }
+#block-2ddea5cbe27e7716a594 .image-block-outer-wrapper::after { content: "Playing Arts Crypto Edition"; }
+#block-yui_3_17_2_1_1753346037179_1804 .image-block-outer-wrapper::after { content: "'Found in Translation' Typographic Exhibition"; }
+
+/* ---------- Shared overlay styling ---------- */
+#block-yui_3_17_2_1_1753330315472_4348 .image-block-outer-wrapper::after, 
+#block-8617ff4d8e45d9ae10b6 .image-block-outer-wrapper::after,
+#block-yui_3_17_2_1_1753330315472_6627 .image-block-outer-wrapper::after,
+#block-yui_3_17_2_1_1753330315472_7464 .image-block-outer-wrapper::after,
+#block-yui_3_17_2_1_1753337116776_1609 .image-block-outer-wrapper::after,
+#block-13d10ca3e46e17c45ae0 .image-block-outer-wrapper::after,
+#block-yui_3_17_2_1_1753337116776_2199 .image-block-outer-wrapper::after,
+#block-yui_3_17_2_1_1753337116776_2699 .image-block-outer-wrapper::after,
+#block-256d956bb355119b778a .image-block-outer-wrapper::after,
+#block-yui_3_17_2_1_1753337116776_4662 .image-block-outer-wrapper::after,
+#block-yui_3_17_2_1_1753337116776_3660 .image-block-outer-wrapper::after,
+#block-yui_3_17_2_1_1753337116776_4183 .image-block-outer-wrapper::after,
+#block-9d79d5f9ff65cec42fca .image-block-outer-wrapper::after,
+#block-1fa29f908b889b660f5f .image-block-outer-wrapper::after,
+#block-7d277611212d7e6a3e26 .image-block-outer-wrapper::after,
+#block-3cd3118dc53e37f58f4e .image-block-outer-wrapper::after,
+#block-e695037aca2feeb696e7 .image-block-outer-wrapper::after,
+#block-76a4f53e5f6b6a9cfca2 .image-block-outer-wrapper::after,
+#block-2edc0c8d71a7e18509d1 .image-block-outer-wrapper::after,
+#block-d0e79f92a730596bebac .image-block-outer-wrapper::after,
+#block-586a3f87a166beae6953 .image-block-outer-wrapper::after,
+#block-yui_3_17_2_1_1753337116776_5730 .image-block-outer-wrapper::after,
+#block-yui_3_17_2_1_1753337116776_6732 .image-block-outer-wrapper::after,
+#block-c4153065f2330bd63a86 .image-block-outer-wrapper::after,
+#block-f7e67e093f408799a1f5 .image-block-outer-wrapper::after,
+#block-5de5f1df58386adc5b72 .image-block-outer-wrapper::after,
+#block-748b0bf0fd6ee517d39e .image-block-outer-wrapper::after,
+#block-87e2334291710352fa7f .image-block-outer-wrapper::after,
+#block-2ddea5cbe27e7716a594 .image-block-outer-wrapper::after,
+#block-yui_3_17_2_1_1753346037179_1804 .image-block-outer-wrapper::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(186, 218, 85, 0), rgba(255, 1, 165, 0.8)) !important;  
+  transition: opacity 0.2s ease-out;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 10px 10px 10px 30px;
+  box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- Show overlay on hover ---------- */
+#block-yui_3_17_2_1_1753330315472_4348 .image-block-outer-wrapper:hover::after, 
+#block-8617ff4d8e45d9ae10b6 .image-block-outer-wrapper:hover::after,
+#block-yui_3_17_2_1_1753330315472_6627 .image-block-outer-wrapper:hover::after,
+#block-yui_3_17_2_1_1753330315472_7464 .image-block-outer-wrapper:hover::after,
+#block-yui_3_17_2_1_1753337116776_1609 .image-block-outer-wrapper:hover::after,
+#block-13d10ca3e46e17c45ae0 .image-block-outer-wrapper:hover::after,
+#block-yui_3_17_2_1_1753337116776_2199 .image-block-outer-wrapper:hover::after,
+#block-yui_3_17_2_1_1753337116776_2699 .image-block-outer-wrapper:hover::after,
+#block-256d956bb355119b778a .image-block-outer-wrapper:hover::after,
+#block-yui_3_17_2_1_1753337116776_4662 .image-block-outer-wrapper:hover::after,
+#block-yui_3_17_2_1_1753337116776_3660 .image-block-outer-wrapper:hover::after,
+#block-yui_3_17_2_1_1753337116776_4183 .image-block-outer-wrapper:hover::after,
+#block-9d79d5f9ff65cec42fca .image-block-outer-wrapper:hover::after,
+#block-1fa29f908b889b660f5f .image-block-outer-wrapper:hover::after,
+#block-7d277611212d7e6a3e26 .image-block-outer-wrapper:hover::after,
+#block-3cd3118dc53e37f58f4e .image-block-outer-wrapper:hover::after,
+#block-e695037aca2feeb696e7 .image-block-outer-wrapper:hover::after,
+#block-76a4f53e5f6b6a9cfca2 .image-block-outer-wrapper:hover::after,
+#block-2edc0c8d71a7e18509d1 .image-block-outer-wrapper:hover::after,
+#block-d0e79f92a730596bebac .image-block-outer-wrapper:hover::after,
+#block-586a3f87a166beae6953 .image-block-outer-wrapper:hover::after,
+#block-yui_3_17_2_1_1753337116776_5730 .image-block-outer-wrapper:hover::after,
+#block-yui_3_17_2_1_1753337116776_6732 .image-block-outer-wrapper:hover::after,
+#block-c4153065f2330bd63a86 .image-block-outer-wrapper:hover::after,
+#block-f7e67e093f408799a1f5 .image-block-outer-wrapper:hover::after,
+#block-5de5f1df58386adc5b72 .image-block-outer-wrapper:hover::after,
+#block-748b0bf0fd6ee517d39e .image-block-outer-wrapper:hover::after,
+#block-87e2334291710352fa7f .image-block-outer-wrapper:hover::after,
+#block-2ddea5cbe27e7716a594 .image-block-outer-wrapper:hover::after,
+#block-yui_3_17_2_1_1753346037179_1804 .image-block-outer-wrapper:hover::after {
+  opacity: 0.8;
+  cursor: pointer;
+}

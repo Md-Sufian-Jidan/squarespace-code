@@ -1,0 +1,30 @@
+/* Mobile Navigation Link Size */
+@media screen and (max-width: 640px) {
+  .sqs-mobile-nav a,
+  .header-menu-nav-wrapper a,
+  .Mobile-bar-nav-link {
+    font-size: 14px !important;
+    padding: 8px 0 !important;
+  }
+ 
+  .user-accounts-text-link span {
+  font-size: 16px;
+}
+
+}
+
+/* Login Button */
+.user-accounts-text-link span {
+ background-color: #dc2626 !important;
+    color: #ffffff !important;        
+    padding: 12px 26px !important;    
+    border-radius: 6px;              
+    font-size: 14px !important;      
+    text-transform: uppercase;        
+    font-weight: 600;  
+}
+
+.user-accounts-text-link span:hover {
+    background-color: #dc5656 !important;
+  color: #fff !important;
+  }

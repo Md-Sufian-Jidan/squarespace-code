@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Image Carousel </title>
+    <style>
+        .alumni-slider {
+            position: relative;
+            max-width: 450px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .alumni-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .alumni-card {
+            min-width: 450px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .alumni-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .alumni-name {
+            font-weight: bold;
+            padding: 10px 0;
+            color: #333;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .prev-btn:hover {
+            background-color: #C4F902;
+            transition: all 0.5s ease-in;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        .next-btn:hover {
+            background-color: #C4F902;
+            transition: all 0.5s ease-in;
+        }
+
+        @media (max-width: 768px) {
+            .alumni-card {
+                min-width: 200px;
+            }
+
+            .alumni-card img {
+                height: 200px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="alumni-slider">
+        <button class="slider-btn prev-btn">&#10094;</button>
+        <div class="alumni-track">
+            <div class="alumni-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/5c0949fdaa49a14676aa1be9/1656472721172-SQC9LUSW9QPHXLJ9CE1T/Morgan+B.png?format=1500w"
+                    alt="Alumni 1">
+                <!-- <div class="alumni-name">John Doe</div> -->
+            </div>
+            <div class="alumni-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/5c0949fdaa49a14676aa1be9/1656472755918-73E5FATUX74ZFWBIDBTB/Paco+D.png?format=1500w"
+                    alt="Alumni 2">
+                <!-- <div class="alumni-name">Jane Smith</div> -->
+            </div>
+            <div class="alumni-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/5c0949fdaa49a14676aa1be9/1656472681765-WKGBERLHPZGN10Z5HSII/Kalah+H.png?format=750w"
+                    alt="Alumni 3">
+                <!-- <div class="alumni-name">David Johnson</div> -->
+            </div>
+            <div class="alumni-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/5c0949fdaa49a14676aa1be9/1656472793122-NO5AVG9HJ13H6LB1QKUD/Ben+W.png?format=1500w"
+                    alt="Alumni 4">
+                <!-- <div class="alumni-name">Sarah Williams</div> -->
+            </div>
+        </div>
+        <button class="slider-btn next-btn">&#10095;</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const track = document.querySelector(".alumni-track");
+            const prevBtn = document.querySelector(".prev-btn");
+            const nextBtn = document.querySelector(".next-btn");
+            const cards = document.querySelectorAll(".alumni-card");
+            let index = 0;
+            const visibleCards = 1; // Change for desktop view count
+            const cardWidth = cards[0].offsetWidth + 20; // includes margin
+
+            function updateSlider() {
+                track.style.transform = `translateX(${-index * cardWidth}px)`;
+            }
+
+            nextBtn.addEventListener("click", () => {
+                if (index < cards.length - visibleCards) {
+                    index++;
+                } else {
+                    index = 0; // loop back
+                }
+                updateSlider();
+            });
+
+            prevBtn.addEventListener("click", () => {
+                if (index > 0) {
+                    index--;
+                } else {
+                    index = cards.length - visibleCards;
+                }
+                updateSlider();
+            });
+
+            // Auto slide every 4s
+            setInterval(() => {
+                if (index < cards.length - visibleCards) {
+                    index++;
+                } else {
+                    index = 0;
+                }
+                updateSlider();
+            }, 5000);
+
+            // Swipe support
+            let startX = 0;
+            track.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+            track.addEventListener("touchend", e => {
+                let endX = e.changedTouches[0].clientX;
+                if (startX - endX > 50) nextBtn.click();
+                if (endX - startX > 50) prevBtn.click();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

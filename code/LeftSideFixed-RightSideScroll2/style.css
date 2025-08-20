@@ -1,0 +1,181 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body,
+ html {
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+     color: #000;
+     background: #fff;
+ }
+
+ .split-section {
+     display: flex;
+     align-items: flex-start;
+ }
+
+ /* Left side */
+ .images {
+     flex: 1;
+     background-color: #E5FF8B;
+     position: sticky;
+     top: 0;
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .images img {
+     width: 100%;
+     border-radius: 15px;
+ }
+
+ .scroll-cue {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-top: 20px;
+     animation: fadeInUp 2s ease-in-out infinite alternate;
+ }
+
+ .scroll-text {
+     font-size: 1rem;
+     color: #333;
+     margin-bottom: 8px;
+ }
+
+ /* Right side */
+ .texts {
+     flex: 1;
+     justify-items: center;
+     background-color: #FFFBF5;
+     padding: 60px 40px;
+ }
+
+ .texts h2 {
+     font-size: 3rem;
+     line-height: 1.4;
+     font-weight: 300;
+     margin-bottom: 20px;
+     text-align: center;
+ }
+
+ .texts p {
+     font-size: 1.05rem;
+     line-height: 1.6;
+     font-weight: 300;
+     margin-bottom: 20px;
+     text-align: center;
+ }
+
+ .order-section {
+     background-color: #fff8f4;
+     padding: 20px;
+     width: 70%;
+ }
+
+ .order-section h3 {
+     font-size: 16px;
+     font-weight: bold;
+     margin: 30px 0 10px;
+ }
+
+ .order-section a {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     border: 1px solid #000;
+     text-decoration: none;
+     color: #000;
+     padding: 12px 16px;
+     margin-bottom: 6px;
+     background-color: #fff;
+ }
+
+ .order-section a .arrow {
+     background-color: #d4fa41;
+     padding: 12px 14px;
+     margin: -12px -16px -12px 12px;
+     font-size: 14px;
+ }
+
+ .order-section a:hover {
+     background-color: #f8f8f8;
+ }
+
+ .text-btn {
+     text-align: center;
+ }
+
+ .text-btn p {
+     font-size: 1.3rem;
+     line-height: 1.6;
+     font-weight: 300;
+     margin-bottom: 20px;
+     text-align: center;
+ }
+
+ .bulk-order-btn {
+     font-family: inherit;
+     font-size: 0.95rem;
+     font-weight: bold;
+     text-transform: uppercase;
+     background: #EFFAFB;
+     border: 2px solid #000;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .bulk-order-btn:hover {
+     background: #5a2c1b;
+     color: #fff3ec;
+ }
+
+
+ /* Responsive */
+ @media (max-width: 900px) {
+     .split-section {
+         flex-direction: column;
+     }
+
+     .images {
+         position: relative;
+         height: auto;
+     }
+
+     .images img {
+         padding: 20px;
+     }
+
+     .left-side-content h2 {
+         font-size: 2.5rem;
+     }
+
+     .texts {
+         padding: 40px 20px;
+     }
+
+     .texts h2 {
+         font-size: 1.6rem;
+     }
+ }
+
+ @media (max-width: 500px) {
+     .left-side-content h2 {
+         font-size: 2rem;
+     }
+
+     .texts p,
+     .program-list li,
+     .payment p,
+     .registration-section p {
+         font-size: 0.95rem;
+     }
+
+ }

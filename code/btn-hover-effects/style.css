@@ -1,0 +1,9 @@
+/* Change a standard button background color on a hover:  */
+.sqs-block-button-element:hover{
+background-color: red!important
+}
+
+/* Change a list item button color on a list item hover: */
+.list-item:hover .list-item-content__button {
+background-color: red!important
+}

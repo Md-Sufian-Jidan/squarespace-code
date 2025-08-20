@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Trauma of Money Book</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #000;
+            background: #FFFBF5;
+        }
+
+        .split-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        /* Left side */
+        .images {
+            flex: 1;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .images img {
+            width: 100%;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        /* Right side */
+        .texts {
+            flex: 1;
+            padding: 60px 40px;
+        }
+
+        .texts h2 {
+            font-size: 2.5rem;
+            line-height: 1.4;
+            font-weight: 300;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .texts p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-weight: 300;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .order-section {
+            padding: 20px;
+            width: 80%;
+            margin: auto;
+        }
+
+        .order-section h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 30px 0 10px;
+        }
+
+        .order-section a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #000;
+            text-decoration: none;
+            color: #000;
+            padding: 12px 16px;
+            margin-bottom: 6px;
+            background-color: #fff;
+        }
+
+        .order-section a .arrow {
+            background-color: #d4fa41;
+            padding: 12px 14px;
+            margin: -12px -16px -12px 12px;
+            font-size: 14px;
+        }
+
+        .order-section a:hover {
+            background-color: #f8f8f8;
+        }
+
+        /* Bulk Order Button */
+        .text-btn {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .bulk-order-btn {
+            font-size: 0.95rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: #EFFAFB;
+            border: 2px solid #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .bulk-order-btn:hover {
+            background: #5a2c1b;
+            color: #fff3ec;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .split-section {
+                flex-direction: column;
+            }
+
+            .images {
+                position: relative;
+                height: auto;
+                padding: 20px;
+            }
+
+            .texts {
+                padding: 40px 20px;
+            }
+
+            .texts h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .texts h2 {
+                font-size: 1.5rem;
+            }
+
+            .texts p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="split-section">
+        <!-- Left -->
+        <div class="images">
+            <img src="https://images.squarespace-cdn.com/content/v1/5c0949fdaa49a14676aa1be9/0a4592d9-2ac6-445d-9655-2aa45a1e03fb/tom-book-mockup.png?format=1000w"
+                alt="The Trauma of Money Book">
+        </div>
+
+        <!-- Right -->
+        <div class="texts">
+            <p>PRE-ORDER NOW</p>
+            <h2>Compassionate Pathways to Disempowering Financial Trauma and Shame</h2>
+            <p>Through the Trauma of Money Method™, Chantel Chapman offers trauma-aware frameworks and tools to
+                disempower financial shame, interrupt harmful money and leadership patterns, and reclaim agency.</p>
+
+            <div class="order-section">
+                <h3>Order in the United States</h3>
+                <a href="#">Order on bookshop.org <span class="arrow">↗</span></a>
+                <a href="#">Order at Barnes & Noble <span class="arrow">↗</span></a>
+                <a href="#">Order on Amazon US <span class="arrow">↗</span></a>
+                <a href="#">Order on Books A Million <span class="arrow">↗</span></a>
+
+                <h3>Order in Canada</h3>
+                <a href="#">Order on Indigo <span class="arrow">↗</span></a>
+                <a href="#">Order on Amazon Canada <span class="arrow">↗</span></a>
+                <a href="#">Order at Massy Books <span class="arrow">↗</span></a>
+                <a href="#">Order at Black Bond Books <span class="arrow">↗</span></a>
+
+                <h3>Order in the United Kingdom</h3>
+                <a href="#">Order at Waterstones <span class="arrow">↗</span></a>
+                <a href="#">Order on Amazon UK <span class="arrow">↗</span></a>
+                <a href="#">Order at Blackwells <span class="arrow">↗</span></a>
+
+                <h3>Order in Mexico</h3>
+                <a href="#">Order at Alma Libre Bookstore <span class="arrow">↗</span></a>
+            </div>
+
+            <div class="text-btn">
+                <p>"Trauma of Money” is available globally. Check your local bookstores to access a copy in your
+                    country.</p>
+                <button class="bulk-order-btn">BULK ORDER INQUIRY?</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
