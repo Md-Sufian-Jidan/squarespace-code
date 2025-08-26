@@ -1,0 +1,5 @@
+/* Rotate a image 180 deg */
+#block-cbefab300924fd2c4abe {
+  transform: rotate(180deg);
+  transform-origin: center;
+}

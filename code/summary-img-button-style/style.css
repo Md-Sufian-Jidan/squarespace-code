@@ -1,0 +1,27 @@
+/* Make all summary block images the same size */
+#block-yui_3_17_2_1_1756119476945_7749 .summary-thumbnail img {
+  width: 100%;
+  height: 250px; /* adjust as needed */
+  object-fit: cover; /* crops image nicely */
+  border-radius: 15px; /* optional: rounded corners */
+}
+
+/* Style the Read More buttons */
+#block-yui_3_17_2_1_1756119476945_7749 .summary-read-more-link {
+  background-color: #FF6B6B; /* your brand accent color */
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for Read More buttons */
+#block-yui_3_17_2_1_1756119476945_7749 .summary-read-more-link:hover {
+  background-color: #FF4B4B; /* slightly darker shade */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

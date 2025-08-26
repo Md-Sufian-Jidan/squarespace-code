@@ -1,0 +1,11 @@
+/* Apply 15px border-radius to list items in this section */
+section[data-section-id="68ac28b68dd3d20f41c2a3fd"] .list-item {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+section[data-section-id="68ac28b68dd3d20f41c2a3fd"] .list-item:hover {
+  transform: scale(1.05); /* smooth zoom */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* soft shadow */
+}

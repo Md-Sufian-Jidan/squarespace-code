@@ -1,0 +1,26 @@
+/* Apply hover effect to multiple blocks */
+#block-70a95ff57f216b6f2161,
+#block-befd7ec0dfa06b7602b2,
+#block-491d2d8a16d5f0a01eca,
+#block-516fff448c0df6083779,
+#block-e6f4b31b815ba5a90cf0,
+#block-c68e51722a9574dc7e91,
+#block-0a2b90b45942313e931b,
+#block-91c2fbc1c72a41645ac1 {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#block-70a95ff57f216b6f2161:hover,
+#block-befd7ec0dfa06b7602b2:hover,
+#block-491d2d8a16d5f0a01eca:hover,
+#block-516fff448c0df6083779:hover,
+#block-e6f4b31b815ba5a90cf0:hover,
+#block-c68e51722a9574dc7e91:hover,
+#block-0a2b90b45942313e931b:hover,
+#block-91c2fbc1c72a41645ac1:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2),
+              0 0 15px rgba(0, 128, 255, 0.15); /* soft glow */
+}
